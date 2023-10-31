@@ -1,4 +1,4 @@
-# artipa.BusinessPortal.Api.Cleint
+# artipa.BusinessPortal.Api.Client
 Is a NET Standard 2.0 component you can use to integrate with ABP (artipa.BusinessPortal) EDI service. 
 
 You can integrate this component into your application (ERP system) sou you can diractly download and upload EDI interchanges from/to ABP server API (https://abpapi.artipa.cz) without need to work with external EDI client app and filesystem.
