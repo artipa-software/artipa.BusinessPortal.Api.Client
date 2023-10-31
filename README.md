@@ -59,7 +59,7 @@ foreach (var fileName in await client.DownloadListAsync())
 }
 ```
 
-Last example show how you can send EDI file into ABP server outbox
+Last example shows how you can send EDI file into ABP server outbox
 
 ```c#
 //Upload file
