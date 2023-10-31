@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "artipa.BusinessPortal.Api.Client", "artipa.BusinessPortal.Api.Client\artipa.BusinessPortal.Api.Client.csproj", "{6AB4919B-A502-4795-843E-4B60C7C738B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{F280B1D2-64DB-4186-998D-FBD2FFAA0BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet7", "examples\dotnet7\dotnet7.csproj", "{2242F72C-ECFC-407B-B494-8F81076C5C45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFrmwrk48", "examples\NetFrmwrk48\NetFrmwrk48.csproj", "{27E61B7C-D086-4136-A923-18B774D9E5CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AB4919B-A502-4795-843E-4B60C7C738B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB4919B-A502-4795-843E-4B60C7C738B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB4919B-A502-4795-843E-4B60C7C738B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB4919B-A502-4795-843E-4B60C7C738B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2242F72C-ECFC-407B-B494-8F81076C5C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2242F72C-ECFC-407B-B494-8F81076C5C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2242F72C-ECFC-407B-B494-8F81076C5C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2242F72C-ECFC-407B-B494-8F81076C5C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E61B7C-D086-4136-A923-18B774D9E5CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E61B7C-D086-4136-A923-18B774D9E5CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E61B7C-D086-4136-A923-18B774D9E5CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E61B7C-D086-4136-A923-18B774D9E5CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2242F72C-ECFC-407B-B494-8F81076C5C45} = {F280B1D2-64DB-4186-998D-FBD2FFAA0BF7}
+		{27E61B7C-D086-4136-A923-18B774D9E5CD} = {F280B1D2-64DB-4186-998D-FBD2FFAA0BF7}
+	EndGlobalSection
+EndGlobal
