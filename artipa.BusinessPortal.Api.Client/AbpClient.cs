@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -37,6 +37,17 @@ public class AbpClient
         return JsonConvert.DeserializeObject<List<string>>(json);
     }
 
+    // <summary>
+    /// Downloads list of files in the ABP server inbox
+    /// </summary>
+    /// <returns>List of file names</returns>
+    public List<string> DownloadList()
+    {
+        var json = _httpClient.GetStringAsync($"{_httpClient.BaseAddress}abp").GetAwaiter().GetResult();
+
+        return JsonConvert.DeserializeObject<List<string>>(json);
+    }
+
     /// <summary>
     /// Download single file content from ABP server
     /// </summary>
@@ -45,6 +56,18 @@ public class AbpClient
     public async Task<byte[]> DownloadFileAsync(string fileName)
     {
         var json = await _httpClient.GetStringAsync($"{_httpClient.BaseAddress}abp/{fileName}");
+
+        return JsonConvert.DeserializeObject<byte[]>(json);
+    }
+
+    // <summary>
+    /// Download single file content from ABP server
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <returns>File byte array content</returns>
+    public byte[] DownloadFile(string fileName)
+    {
+        var json = _httpClient.GetStringAsync($"{_httpClient.BaseAddress}abp/{fileName}").GetAwaiter().GetResult();
 
         return JsonConvert.DeserializeObject<byte[]>(json);
     }
@@ -62,12 +85,37 @@ public class AbpClient
     }
 
     /// <summary>
+    /// Upload file to ABP server outbox
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <param name="content"></param>
+    public void UploadFile(string fileName, byte[] content)
+    {
+        var json = JsonConvert.SerializeObject(new
+        {
+            Content = content,
+            Name = fileName
+        });
+        var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+        _httpClient.PostAsync($"{_httpClient.BaseAddress}abp", httpContent).GetAwaiter().GetResult();
+    }
+
+    /// <summary>
     /// Commit download of file (file will be moved into archive on the ABP server side)
     /// </summary>
     /// <param name="fileName"></param>
     public async Task CommitDownloadAsync(string fileName)
     {
         await _httpClient.DeleteAsync($"{_httpClient.BaseAddress}abp/{fileName}");
+    }
+
+    /// <summary>
+    /// Commit download of file (file will be moved into archive on the ABP server side)
+    /// </summary>
+    /// <param name="fileName"></param>
+    public void CommitDownload(string fileName)
+    {
+        _httpClient.DeleteAsync($"{_httpClient.BaseAddress}abp/{fileName}").GetAwaiter().GetResult();
     }
 
     /// <summary>
